@@ -86,7 +86,7 @@ async def isher(interaction: discord.Interaction):
 @app_commands.describe(usuario="Usuário que vai receber a carona")
 async def carona(interaction: discord.Interaction, usuario: discord.Member):
     registrar_ataque(usuario, "caronas recebidas")
-    with open("carona.gif", "rb") as gif:
+    with open("imgs\carona.gif", "rb") as gif:
         await interaction.response.send_message(
             f'{interaction.user.mention} deu uma carona pra {usuario.mention}', file=discord.File(gif)
         )
@@ -95,7 +95,7 @@ async def carona(interaction: discord.Interaction, usuario: discord.Member):
 @app_commands.describe(usuario="Usuário que vai levar peteco")
 async def peteco(interaction: discord.Interaction, usuario: discord.Member):
     registrar_ataque(usuario, "petecos recebidos")
-    with open("peteco.png", "rb") as img:
+    with open("imgs\peteco.png", "rb") as img:
         await interaction.response.send_message(
             f'{interaction.user.mention} deu petecos virtuais em {usuario.mention}', file=discord.File(img)
         )
@@ -104,36 +104,36 @@ async def peteco(interaction: discord.Interaction, usuario: discord.Member):
 @app_commands.describe(usuario="Usuário que vai levar pra bananeira")
 async def bananeira(interaction: discord.Interaction, usuario: discord.Member):
     registrar_ataque(usuario, "levados para bananeira")
-    with open("bananeira.gif", "rb") as gif:
+    with open("imgs\bananeira.gif", "rb") as gif:
         await interaction.response.send_message(
             f'{interaction.user.mention} levou {usuario.mention} para atrás da bananeira', file=discord.File(gif)
         )
 
 @bot.tree.command(name="montesinai", description="Mais uma pizza feita na Monte Sinai")
 async def montesinai(interaction: discord.Interaction):
-    with open("pizza.gif", "rb") as gif:
+    with open("imgs\pizza.gif", "rb") as gif:
         await interaction.response.send_message("Mais uma pizza sendo feita na Monte Sinai 🍕", file=discord.File(gif))
 
 @bot.tree.command(name="cambio", description="Rapaz...")
 async def cambio(interaction: discord.Interaction):
-    with open("desligo.gif", "rb") as gif:
+    with open("imgs\desligo.gif", "rb") as gif:
         await interaction.response.send_message("Rapaz... oia é o seguinte... rapa.. rum... Câmbio desligo!", file=discord.File(gif))
 
 @bot.tree.command(name="alo", description="testando")
 async def alo(interaction: discord.Interaction):
-    with open("alosom.gif", "rb") as gif:
+    with open("imgs\alosom.gif", "rb") as gif:
         await interaction.response.send_message("Alô som", file=discord.File(gif))
 
 @bot.tree.command(name="pizzaiolo", description="Olha a habilidade")
 async def pizzaiolo(interaction: discord.Interaction):
-    with open("pizzaiolo.gif", "rb") as gif:
+    with open("imgs\pizzaiolo.gif", "rb") as gif:
         await interaction.response.send_message("Olha a habilidade dos pizzaiolos da Monte Sinai!!", file=discord.File(gif))
 
 @bot.tree.command(name="pedra", description="Taca pedra na cabeça de alguém")
 @app_commands.describe(usuario="Usuário que vai levar a pedrada")
 async def pedra(interaction: discord.Interaction, usuario: discord.Member):
     registrar_ataque(usuario, "pedras jogadas")
-    with open("pedra.gif", "rb") as gif:
+    with open("imgs\pedra.gif", "rb") as gif:
         await interaction.response.send_message(
             f'{interaction.user.mention} tacou a pedra em {usuario.mention}', file=discord.File(gif)
         )
@@ -141,7 +141,7 @@ async def pedra(interaction: discord.Interaction, usuario: discord.Member):
 @bot.tree.command(name="calcinha", description="...")
 async def calcinha(interaction: discord.Interaction):
     registrar_ataque(interaction.user, "calcinhas usadas")  # corrigido
-    with open("calcinha.png", "rb") as img:
+    with open("imgs\calcinha.png", "rb") as img:
         await interaction.response.send_message(f'{interaction.user.mention} usou calcinha', file=discord.File(img))
 
 @bot.tree.command(name="time", description="Mostra o melhor time")
