@@ -91,10 +91,9 @@ async def carona(interaction: discord.Interaction, usuario: discord.Member):
             f'{interaction.user.mention} deu uma carona pra {usuario.mention}', file=discord.File(gif)
         )
 
-@bot.tree.command(name="carona", description="Leva alguém a algum lugar 😈")
-@app_commands.describe(usuario="Usuário que vai receber a carona")
+@bot.tree.command(name="cansado", description="estoy cansado chefe")
+@app_commands.describe(usuario="Usuário que está cansado")
 async def cansado(interaction: discord.Interaction, usuario: discord.Member):
-    registrar_ataque(usuario, "caronas recebidas")
     with open("imgs/stitch.gif", "rb") as gif:
         await interaction.response.send_message(
             f'{usuario.mention} depois de 20 horas semanais', file=discord.File(gif)
