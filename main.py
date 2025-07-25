@@ -99,6 +99,26 @@ async def cansado(interaction: discord.Interaction, usuario: discord.Member):
             f'{usuario.mention} depois de 20 horas semanais', file=discord.File(gif)
         )
 
+@bot.tree.command(name="cachorro", description="o cachorro da Monte Sinai...")
+async def cachorro(interaction: discord.Interaction):
+    with open("imgs/cachorro-pizza.gif", "rb") as gif:
+        await interaction.response.send_message(
+            f'Na Monte Sinai até o cachorro trabalha!', file=discord.File(gif)
+        )
+
+@bot.tree.command(name="maionese", description="A maionese da Monte Sinai é ....")
+async def maionese(interaction: discord.Interaction):
+    with open("imgs/maionese.gif", "rb") as gif:
+        await interaction.response.send_message(
+            f'A maionese da Monte Sinai é muito cremosa!', file=discord.File(gif)
+        )
+
+@bot.tree.command(name="motoboy", description="A motoboy da Monte Sinai é ....")
+async def motoboy(interaction: discord.Interaction):
+    with open("imgs/motoboy.gif", "rb") as gif:
+        await interaction.response.send_message(
+            f'Olha a habilidade dos motoboys da Monte Sinai!', file=discord.File(gif)
+        )
 
 @bot.tree.command(name="peteco", description="Dá petecos virtuais em alguém")
 @app_commands.describe(usuario="Usuário que vai levar peteco")
