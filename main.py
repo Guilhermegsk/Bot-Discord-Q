@@ -99,6 +99,13 @@ async def cansado(interaction: discord.Interaction, usuario: discord.Member):
             f'{usuario.mention} depois de 20 horas semanais', file=discord.File(gif)
         )
 
+@bot.tree.command(name="briga", description="Isabela e Laura...")
+async def briga(interaction: discord.Interaction):
+    with open("imgs/briga.gif", "rb") as gif:
+        await interaction.response.send_message(
+            f'Isabela e Laura estão brigando...', file=discord.File(gif)
+        )
+
 @bot.tree.command(name="cachorro", description="o cachorro da Monte Sinai...")
 async def cachorro(interaction: discord.Interaction):
     with open("imgs/cachorro-pizza.gif", "rb") as gif:
