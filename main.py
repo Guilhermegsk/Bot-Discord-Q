@@ -61,7 +61,8 @@ def registrar_ataque(user: discord.Member, tipo: str):
             "caronas recebidas": 0,
             "levados para bananeira": 0,
             "calcinhas usadas": 0,
-            "pedras jogadas": 0
+            "pedras jogadas": 0,
+            "ultrapassagens": 0
         }
 
     ranking[user_id][tipo] += 1
@@ -89,6 +90,15 @@ async def carona(interaction: discord.Interaction, usuario: discord.Member):
     with open("imgs/carona.gif", "rb") as gif:
         await interaction.response.send_message(
             f'{interaction.user.mention} deu uma carona pra {usuario.mention}', file=discord.File(gif)
+        )
+
+@bot.tree.command(name="kart", description="vrumm")
+@app_commands.describe(usuario="Usuário que vai se ultrapassado")
+async def kart(interaction: discord.Interaction, usuario: discord.Member):
+    registrar_ataque(usuario, "ultrapassagens")
+    with open("imgs/kart.gif", "rb") as gif:
+        await interaction.response.send_message(
+            f'{interaction.user.mention} passou de {usuario.mention} no kart!', file=discord.File(gif)
         )
 
 @bot.tree.command(name="cansado", description="estoy cansado chefe")
